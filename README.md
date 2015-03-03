@@ -1,3 +1,3 @@
 # CustomCK
 CKEditor Module for Orchard CMS
-Please see Wiki for more information
+https://github.com/inteno/CustomCK/wiki

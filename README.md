@@ -1,3 +1,2 @@
-# CustomCK
-CKEditor Module for Orchard CMS
-https://github.com/inteno/CustomCK/wiki
+# Readme.md
+Please see: https://github.com/inteno/CustomCK/wiki/Introcution

@@ -1,27 +1,20 @@
 ﻿using CustomCK.Models;
 using Orchard.ContentManagement.Handlers;
-using Orchard.Data;
 using Orchard.Localization;
 using Orchard.ContentManagement;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CustomCK.Handlers
 {
     public class CustomCKSettingsPartHandler : ContentHandler
     {
-        public CustomCKSettingsPartHandler(IRepository<CustomCKSettingsPartRecord> repository)
+        public CustomCKSettingsPartHandler()
         {
             T = NullLocalizer.Instance;
 
             Filters.Add(new ActivatingFilter<CustomCKSettingsPart>("Site")); //Add a new Part to the Site content type
 
-            Filters.Add(StorageFilter.For(repository)); //Ensures that Orchard takes care of saving the data
-
             //Loads Views/EditorTemplates/Parts.CustomCK.CustomCKSettings.cshtml
-            Filters.Add(new TemplateFilterForRecord<CustomCKSettingsPartRecord>("CustomCKSettings", "Parts.CustomCK.CustomCKSettings", "CustomCK"));
+            Filters.Add(new TemplateFilterForPart<CustomCKSettingsPart>("CustomCKSettings", "Parts.CustomCK.CustomCKSettings", "CustomCK"));
         }
 
         public Localizer T { get; set; }
@@ -30,6 +23,7 @@ namespace CustomCK.Handlers
         {
             if (context.ContentItem.ContentType != "Site")
                 return;
+            base.GetItemMetadata(context);
             context.Metadata.EditorGroupInfo.Add(new GroupInfo(T("CustomCK"))); //Adds Settings > CustomCK Menu item
         }
     }

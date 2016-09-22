@@ -1,23 +1,29 @@
-@model CustomCK.Models.CustomCKSettingsPartRecord
+@model CustomCK.Models.CustomCKSettingsPart
 @using Orchard.ContentManagement;
 
 @{
    Layout.Title = T("CustomCK Settings").ToString();
-   Style.Require("CodeMirror");
+   //Style.Require("CodeMirror");
+   
+   
+
+    //Script.Include("codemirror/codemirror-compressed.js");
+    //Style.Include("codemirror/codemirror.css");
+
 }
 
 @using (Script.Foot()) {
-    @*Script.Require("CodeMirror");
+    //Script.Require("CodeMirror");
    
     <script type="text/javascript">
     //<![CDATA[
-        var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("CustomCKSettings_ConfigString"), 
-            {
-                lineNumbers: true,
-                mode: { name: "javascript", json: true }
-            });
+        //var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("CustomCKSettings_ConfigString"), 
+        //    {
+        //        lineNumbers: true,
+        //        mode: "application/x-ejs",//mode: { name: "javascript", json: true }
+        //    });
     //]]>
-    </script>*@
+    </script>
 }
 
 <fieldset>

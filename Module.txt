@@ -1,9 +1,9 @@
-﻿Name: CustomCK
+Name: CustomCK
 AntiForgery: enabled
 Author: inteno
-Website: http://www.nuboserv.com
-Version: 1.0
-OrchardVersion: 1.8.1
+Website: https://github.com/inteno/CustomCK/wiki/Introduction
+Version: 1.1
+OrchardVersion: 1.10.1
 Description: CKEditor Module for Orchard (based on LuDC.CKEditor)
 Features:
     CustomCK:

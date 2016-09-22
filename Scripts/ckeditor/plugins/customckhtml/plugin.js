@@ -1,17 +1,18 @@
 ﻿/*global CKEDITOR */
 (function () {
-    function initAwesomeList(editor) {
-        CKEDITOR.dtd.$removeEmpty.i = false;//Alow empty <i> </i> in order to ensure that FontAwesome List symbols do not get erased
 
+    function initAwesomeList(editor) {
+       
+        CKEDITOR.dtd.$removeEmpty.i = false;//Alow empty <i> </i> in order to ensure that FontAwesome List symbols do not get erased
         editor.addCommand('insertAwesomeList', {
 
             allowedContent: 'i(fa,fa-check,color-green); ul(list-unstyled,margin-bottom-20)',
 
             exec: function (editor) {
                 editor.insertHtml("<ul class='list-unstyled margin-bottom-20'>" +
-                                "<li><i class='fa fa-check color-green'></i>&nbsp;Eins</li>" +
-                                "<li><i class='fa fa-check color-green'></i>&nbsp;Zwei</li>" +
-                                "<li><i class='fa fa-check color-green'></i>&nbsp;Drei</li>" +
+                                "<li><i class='fa fa-check color-green'></i>&#160;Eins</li>" +
+                                "<li><i class='fa fa-check color-green'></i>&#160;Zwei</li>" +
+                                "<li><i class='fa fa-check color-green'></i>&#160;Drei</li>" +
                                 "</ul>");
             }
         });
@@ -153,7 +154,3 @@
     });
 
 })();
-
-
-
-
